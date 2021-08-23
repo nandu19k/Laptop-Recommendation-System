@@ -24,6 +24,8 @@ Link for Video Demo: https://www.youtube.com/watch?v=1ZlExl-eeRA
 Cosine Similarity is a measurement that quantifies the similarity between two or more vectors . The cosine similarity is the cosine of the angle between vectors. The vectors are typically non-zero and are within an inner product space.
 
 The cosine similarity is described mathematically as the division between the dot product of vectors and the product of the euclidean norms or magnitude of each vector.
+
+
 ![image](https://user-images.githubusercontent.com/51316115/130497094-93bb62c9-f865-4a0e-b9cf-bd09e964cfc2.png)
 ![image](https://user-images.githubusercontent.com/51316115/130497178-a51774ac-50d4-455a-b80b-fd97a65b05c8.png)
 
