@@ -2,9 +2,11 @@
 
 Our Laptop Recommendation System will recommend similar laptops to users based on their search results. This is Content Based Recommendation System which uses Cosine Similarity techninque to recommend similar Laptops
 
+Link for Video Demo: https://www.youtube.com/watch?v=1ZlExl-eeRA
+
 ![image](https://user-images.githubusercontent.com/51316115/130495253-fac0cf20-227a-4676-aff2-64a84f9cbb4b.png)
 
-# When user searches for the Laptop (Auto Suggestion)
+# When a user searches for the Laptop (Auto Suggestion)
 ![image](https://user-images.githubusercontent.com/51316115/130495524-88f0d4bb-0247-4f29-a716-90ae679115e6.png)
 
 # Details of the Laptop which user searched for
@@ -17,4 +19,12 @@ Our Laptop Recommendation System will recommend similar laptops to users based o
 
 # Details of one of the Recommended Laptop:
 ![image](https://user-images.githubusercontent.com/51316115/130496046-1c7289b0-a3cd-435a-b255-a97e25f7631d.png)
+
+# How Cosine Similarity Works?
+Cosine Similarity is a measurement that quantifies the similarity between two or more vectors . The cosine similarity is the cosine of the angle between vectors. The vectors are typically non-zero and are within an inner product space.
+
+The cosine similarity is described mathematically as the division between the dot product of vectors and the product of the euclidean norms or magnitude of each vector.
+![image](https://user-images.githubusercontent.com/51316115/130497094-93bb62c9-f865-4a0e-b9cf-bd09e964cfc2.png)
+![image](https://user-images.githubusercontent.com/51316115/130497178-a51774ac-50d4-455a-b80b-fd97a65b05c8.png)
+
 
