@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Laptop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+   
+ 
+ .jumbotron {
+      margin-bottom: 50px;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #b2d19d;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: auto;
+    }
+    
+  </style>
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h2><a href='/'>Laptop Recommendation System</a></h2>      
+    <p>Choose Your Laptop Wisely</p>
+  </div>
+</div>
+
+
+ 
+  
+  <div class="container-fluid">
+        <div class="row">
+          
+          <div class="col-sm-3 col-md-6" >
+            <h2>You have searchd for:</h2>
+          </div>
+          <br>
+          <br>
+
+          <div class="col-sm-9 col-md-6"  style="text-align: left;">
+            <div class="card" style="width:400px">
+              <img class="card-img-top" src= {{ img }} alt="Card image" style="width:50%">
+              <div class="card-body">
+                <h4 class="card-title">{{ laptop }}</h4>
+                <hr>
+                <p> <strong>Brand:</strong> {{ brand }} </p>
+                <p> <strong>Procesor:</strong> {{ processor }} </p>
+                <p> <strong>RAM:</strong> {{ ram }} </p>
+                <p> <strong>HDD:</strong> {{ hdd }} </p>
+                <p> <strong>SSD:</strong> {{ ssd }} </p>
+                <p> <strong>Graphic Card:</strong> {{ graphic }} </p>
+                <p> <strong>Display:</strong> {{ display }} </p>
+                <p> <strong>OPERATING SYSTEM:</strong> {{ os }}</p>
+                <p> <strong>Price:</strong> {{price}} </p>            
+               
+              </div>
+            </div>
+            <br>
+          </div>
+        </div>
+&nbsp;
+<h1>Here are the similar items for your search:</h1>
+&nbsp;
+    
+<div class="row">
+  {% for imgs , name, details in pair[0:4] %}
+    <div class="col-sm-3">
+      <div class="panel panel-primary">
+        <div class="panel-heading"> {{ name }}</div>
+        <div class="panel-body"><img src={{ imgs }} class="img-responsive" width="50%" alt={{name}}></div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=#{{details[9]}}>
+          Click to see Details
+        </button>
+
+        <div class="modal fade" id= {{details[9]}} tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="card-body">
+              <div class="modal-body">
+                <img class="card-img-top" src= {{ imgs }} alt="Card image" style="width:50%">
+                      <h4 class="card-title">{{ name }}</h4>
+                      <hr>
+                      <p> <strong>Brand:</strong> {{ details[0] }} </p>
+                      <p> <strong>Procesor:</strong> {{ details[1] }} </p>
+                      <p> <strong>RAM:</strong> {{ details[2] }} </p>
+                      <p> <strong>HDD:</strong> {{ details[3] }} </p>
+                      <p> <strong>SSD:</strong> {{ details[4] }} </p>
+                      <p> <strong>Graphic Card:</strong> {{ details[5] }} </p>
+                      <p> <strong>Display:</strong> {{ details[6] }} </p>
+                      <p> <strong>OPERATING SYSTEM:</strong> {{ details[7] }}</p>
+                      <p> <strong>Price:</strong> {{details[8]}} </p>            
+                    
+                    </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
+    <br><br>
+    &nbsp;
+    
+<div class="row">
+  {% for imgs , name, details in pair[4:8] %}
+    <div class="col-sm-3">
+      <div class="panel panel-primary">
+        <div class="panel-heading"> {{ name }}</div>
+        <div class="panel-body"><img src={{ imgs }} class="img-responsive" width="50%" alt={{name}}></div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=#{{details[9]}}>
+          Click to see Details
+        </button>
+
+        <div class="modal fade" id= {{details[9]}} tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="card-body">
+              <div class="modal-body">
+                <img class="card-img-top" src= {{ imgs }} alt="Card image" style="width:50%">
+                      <h4 class="card-title">{{ name }}</h4>
+                      <hr>
+                      <p> <strong>Brand:</strong> {{ details[0] }} </p>
+                      <p> <strong>Procesor:</strong> {{ details[1] }} </p>
+                      <p> <strong>RAM:</strong> {{ details[2] }} </p>
+                      <p> <strong>HDD:</strong> {{ details[3] }} </p>
+                      <p> <strong>SSD:</strong> {{ details[4] }} </p>
+                      <p> <strong>Graphic Card:</strong> {{ details[5] }} </p>
+                      <p> <strong>Display:</strong> {{ details[6] }} </p>
+                      <p> <strong>OPERATING SYSTEM:</strong> {{ details[7] }}</p>
+                      <p> <strong>Price:</strong> {{details[8]}} </p>            
+                    
+                    </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
+    <br><br>
+    &nbsp;
+    
+    <div class="row">
+      {% for imgs , name, details in pair[8:12] %}
+        <div class="col-sm-3">
+          <div class="panel panel-primary">
+            <div class="panel-heading"> {{ name }}</div>
+            <div class="panel-body"><img src={{ imgs }} class="img-responsive" width="50%" alt={{name}}></div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=#{{details[9]}}>
+              Click to see Details
+            </button>
+    
+            <div class="modal fade" id= {{details[9]}} tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="card-body">
+                  <div class="modal-body">
+                    <img class="card-img-top" src= {{ imgs }} alt="Card image" style="width:50%">
+                          <h4 class="card-title">{{ name }}</h4>
+                          <hr>
+                          <p> <strong>Brand:</strong> {{ details[0] }} </p>
+                          <p> <strong>Procesor:</strong> {{ details[1] }} </p>
+                          <p> <strong>RAM:</strong> {{ details[2] }} </p>
+                          <p> <strong>HDD:</strong> {{ details[3] }} </p>
+                          <p> <strong>SSD:</strong> {{ details[4] }} </p>
+                          <p> <strong>Graphic Card:</strong> {{ details[5] }} </p>
+                          <p> <strong>Display:</strong> {{ details[6] }} </p>
+                          <p> <strong>OPERATING SYSTEM:</strong> {{ details[7] }}</p>
+                          <p> <strong>Price:</strong> {{details[8]}} </p>            
+                        
+                        </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    
+    
+        <br><br>
+        &nbsp;
+    
+        <div class="row">
+          {% for imgs , name, details in pair[12:16] %}
+            <div class="col-sm-3">
+              <div class="panel panel-primary">
+                <div class="panel-heading"> {{ name }}</div>
+                <div class="panel-body"><img src={{ imgs }} class="img-responsive" width="50%" alt={{name}}></div>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=#{{details[9]}}>
+                  Click to see Details
+                </button>
+        
+                <div class="modal fade" id= {{details[9]}} tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="card-body">
+                      <div class="modal-body">
+                        <img class="card-img-top" src= {{ imgs }} alt="Card image" style="width:50%">
+                              <h4 class="card-title">{{ name }}</h4>
+                              <hr>
+                              <p> <strong>Brand:</strong> {{ details[0] }} </p>
+                              <p> <strong>Procesor:</strong> {{ details[1] }} </p>
+                              <p> <strong>RAM:</strong> {{ details[2] }} </p>
+                              <p> <strong>HDD:</strong> {{ details[3] }} </p>
+                              <p> <strong>SSD:</strong> {{ details[4] }} </p>
+                              <p> <strong>Graphic Card:</strong> {{ details[5] }} </p>
+                              <p> <strong>Display:</strong> {{ details[6] }} </p>
+                              <p> <strong>OPERATING SYSTEM:</strong> {{ details[7] }}</p>
+                              <p> <strong>Price:</strong> {{details[8]}} </p>            
+                            
+                            </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        
+        
+            <br><br>
+              
+  
+
+&nbsp;
+&nbsp;
+
+<footer class="container-fluid text-center">
+  <p><strong> Made with <span style="font-size:150%;color:red;"> ♥ </span>by Vardhan</strong></p>  
+<p> The Laptop Recommendation System using ML and Web Scraping.</p>
+</footer>
+
+</body>
+</html>
