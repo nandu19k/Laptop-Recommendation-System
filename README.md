@@ -2,6 +2,8 @@
 
 Our Laptop Recommendation System will recommend similar laptops to users based on their search results. This is Content Based Recommendation System which uses Cosine Similarity techninque to recommend similar Laptops
 
+Dataset: Web Scraping from this Website https://www.smartprix.com/laptops/
+
 Link for Video Demo: https://www.youtube.com/watch?v=1ZlExl-eeRA
 
 ![image](https://user-images.githubusercontent.com/51316115/130495253-fac0cf20-227a-4676-aff2-64a84f9cbb4b.png)
